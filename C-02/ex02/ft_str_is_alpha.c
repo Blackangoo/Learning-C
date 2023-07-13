@@ -19,6 +19,4 @@ int main(void)
     char str[] = "HelloWorld";
     int ret = ft_str_is_alpha(str);
     printf("%d \n", ret);
-
-
 }
