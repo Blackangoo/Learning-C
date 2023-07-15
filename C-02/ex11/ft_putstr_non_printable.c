@@ -16,11 +16,13 @@ int	ft_base16(int nb, int count)
 		ft_base16(nb % 16, count);
 	}
 	else
+    {
         if (count == 0)
         {
             ft_putchar('0');
         }
 		ft_putchar(alpha[nb]);
+    }
 }
 
 void ft_putstr_non_printable(char *str)
