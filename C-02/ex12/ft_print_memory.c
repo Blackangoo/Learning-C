@@ -34,13 +34,63 @@ void ft_print_address(void *addr)
     ft_base16(arg2, 0);
 }
 
-void ft_print_phrase(int i, char * str)
+void ft_print_phrase(int count, int limit, char * str)
 {
+    if (count != 0)
+    {
+        int j = (count - 1) * 16;
+        while (j < limit)
+        {
+            if (str[j] >= 32 && str[j] <= 126)
+            {
+                ft_putchar(str[j]);
+            }
+            else
+            {
+                ft_putchar('.');
+            }
+            
+            j++;
+        }
+        
+    }
+    
+}
 
+void ft_print_content(char first, int i)
+{
+    ft_base16(first,0);
+    if (i % 2 == 1)
+    {
+        ft_putchar(' ');
+    }
+
+}
+
+void ft_print_address_main(char chara)
+{
+    ft_putchar('\n');
+    ft_print_address(&chara);
+    ft_putchar(':');
+    ft_putchar(' ');
+}
+
+void ft_complete_content(int count, int i)
+{
+    ft_putchar('0');
+    ft_putchar('0');
+    ft_putchar(' ');
+    while (i % 16 != 0)
+    {
+        ft_putchar(' ');
+        i++;
+    }
+    
 }
 
 void *ft_print_memory(void *addr, unsigned int size)
 {
+    int count = 0;
     char *test = (char*)addr;
     if (size)
     {
@@ -49,23 +99,21 @@ void *ft_print_memory(void *addr, unsigned int size)
         {
             if (i % 16 == 0) /* L’adresse en hexadécimal du premier caractère de la ligne suivi d’un ’ :’. */
             {
-                ft_print_phrase(i, test);
-                ft_putchar('\n');
-                ft_print_address(&test[i]);
-                ft_putchar(':');
-                ft_putchar(' ');
-                ft_base16(test[i],0);
-                ft_base16(test[i + 1],0);
-                ft_putchar(' ');
+                ft_print_phrase(count, i , test);
+                count +=1;
+                ft_print_address_main(test[i]);
+                ft_print_content(test[i], i);
             }
             else
             {
-                ft_base16(test[i],0);
-                ft_base16(test[i + 1],0);
-                ft_putchar(' ');
+                ft_print_content(test[i], i);
             }
-            i+=2;
+
+            i++;
         }
+        ft_complete_content(count,i);
+        ft_print_phrase(count, i + 1, test);
+        ft_putchar('\n');
     }
     else
     {
@@ -76,8 +124,7 @@ void *ft_print_memory(void *addr, unsigned int size)
 
 int main(void)
 {
-    char *str =  "Bonjour les aminches\n\n\nc\n est fou\ntout\nce qu on peut faire avec\n\n\nprint_memory\n\n\n\nlol\nlol\n \n ";
-    printf("addresse: %p",str);
+    char *str =  "Bonjour les aminches\t\n\tc\a est fou\ttout\tce qu on peut faire avec\t\n\tprint_memory\n\n\n\tlol\nlol\n \0";
     ft_print_memory(str,1);
     return 0;
 }
