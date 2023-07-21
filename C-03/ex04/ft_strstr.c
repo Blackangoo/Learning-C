@@ -29,7 +29,7 @@ char *ft_strstr(char *str, char *to_find)
 int main(void)
 {
     char str[] = "bonjour je suis un mot admin test";
-    char to_find[] = "jes";
+    char to_find[] = "je";
 
     char *ptr;
 
