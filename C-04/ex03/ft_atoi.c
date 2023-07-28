@@ -1,39 +1,48 @@
 #include <stdio.h>
 
-int ft_clean_nb(int nb, int count)
+int ft_signe(char *str)
 {
-    if (nb >= 2147483647)
+    int i_str = 0;
+    int neg = 0;
+
+    while ((str[i_str] >= 9 && str[i_str] <= 13) || (str[i_str] == 32))
     {
-        nb = 2147483647;
+        i_str++;
     }
-    if (count % 2 == 1)
+    while ((str[i_str] == '+' || str[i_str] == '-'))
     {
-        nb = -nb;
+        if (str[i_str] == '-')
+            neg++;
+        i_str++;
     }
-    return(nb);
+    if (neg % 2)
+        return(-1);
+    return(1);
     
 }
 
 int ft_atoi(char *str)
 {
-    int i_str = 0;
-    int count = 0;
-    int nb = 0;
+    int i_str;
+    int nb;
 
-    while (((str[i_str] >= 9 && str[i_str] <= 13) || (str[i_str] == 32)) || (str[i_str] == '+' || str[i_str] == '-'))
-    {
-        if (str[i_str] == '-')
-        {
-            count++;
-        }
+    i_str = 0;
+    nb = 0;
+    while ((str[i_str] >= 9 && str[i_str] <= 13) || (str[i_str] == 32))
         i_str++;
-    }
+    while ((str[i_str] == '+' || str[i_str] == '-'))
+        i_str++;
     while (str[i_str] >= '0' && str[i_str] <= '9')
     {
         nb = nb * 10 + (str[i_str] - '0');
         i_str++;
     }
-    return(ft_clean_nb(nb, count));
+    if (nb >= 2147483647)
+    {
+        nb = 2147483647;
+        return(nb * ft_signe(str));
+    }
+    return(nb * ft_signe(str));
 }
 
 int	main()
