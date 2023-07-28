@@ -15,7 +15,7 @@ int sqr(int nb, int x)
 
 int ft_sqrt(int nb)
 {
-    sqr(nb, 1);
+    return(sqr(nb, 1));
 }
 
 int main(void)
