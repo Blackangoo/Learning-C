@@ -28,8 +28,11 @@ void ft_print(int x, int y)
     ft_write(x);
     ft_putchar(' ');
     ft_write(y);
-    ft_putchar(',');
-    ft_putchar(' ');
+    if (!(x == 98 && y == 99))
+    {
+        ft_putchar(',');
+        ft_putchar(' ');
+    }
 }
 
 void ft_print_comb2(void)
@@ -46,8 +49,8 @@ void ft_print_comb2(void)
         x++;
     }
 }
-
+/*
 int main()
 {
     ft_print_comb2();
-}
+}*/

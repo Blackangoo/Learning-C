@@ -1,44 +1,32 @@
 #include <unistd.h>
 
-void ft_putchar(char value)
+void ft_putchar(char number)
 {
-	write(1, &value, 1);
+	write(1, &number, 1);
 }
 
-void ft_number(int nb)
+void ft_putnbr(int nb)
 {
-    int divisor;
-    divisor = 1;
-    while (nb > 0)
-    {
-        if (nb / divisor < 9)
-        {
-            int digit;
-            digit = nb / divisor;
-            ft_putchar('0' + digit);
-            nb = nb - (digit * divisor);
-            divisor = 1;
-        }
-        else
-            divisor = divisor * 10;
-    }
+	if (nb == -2147483648)
+		write(1, "-2147483648", 11);
+	else if (nb < 0)
+	{
+		ft_putchar('-');
+		ft_putnbr(-nb);
+	}
+	else if (nb > 9)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+	{
+		ft_putchar(nb + '0');
+	}
 }
-
-void ft_clean(int nb)
-{
-    if (nb < 0)
-    {
-        ft_putchar('-');
-        ft_number(-nb);
-    }
-    else
-    {
-        ft_number(nb);
-    }
-}
-
+/*
 int main()
 {
     ft_clean(-7);
     ft_putchar('\n');
-}
+}*/

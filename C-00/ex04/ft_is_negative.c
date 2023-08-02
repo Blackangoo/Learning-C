@@ -12,10 +12,10 @@ void ft_is_negative(int n)
     }
     write(1, "\n", 1);
 }
-
+/*
 int main()
 {
     ft_is_negative(12);
     ft_is_negative(0);
     ft_is_negative(-3);
-}
+}*/
