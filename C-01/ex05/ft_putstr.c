@@ -15,9 +15,9 @@ void ft_putstr(char *str)
     }
     
 }
-
+/*
 int main()
 {
     char *str = "Arthur";
     ft_putstr(str);
-}
+}*/
