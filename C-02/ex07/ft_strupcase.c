@@ -13,9 +13,9 @@ char *ft_strupcase(char *str)
     }
     return str;
 }
-
+/*
 int main(void)
 {
     char str[] = "hello world!";
     printf("%s \n", ft_strupcase(str));
-}
+}*/

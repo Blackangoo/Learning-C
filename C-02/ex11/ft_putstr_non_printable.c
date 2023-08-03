@@ -5,7 +5,7 @@ void ft_putchar(char value)
     write(1, &value, 1);
 }
 
-int	ft_base16(int nb, int count)
+void ft_base16(int nb, int count)
 {
     char *alpha;
     alpha = "0123456789abcdef";
@@ -27,7 +27,9 @@ int	ft_base16(int nb, int count)
 
 void ft_putstr_non_printable(char *str)
 {
-    int i = 0;
+    int i;
+
+    i = 0;
     while (str[i])
     {
         if (str[i] >= 32 && str[i] <= 126)
@@ -44,10 +46,10 @@ void ft_putstr_non_printable(char *str)
     }
     
 }
-
+/*
 int main(void)
 {
     char str[] = "Coucou\ntu vas bien ?";
     ft_putstr_non_printable(str);
     ft_putchar('\n');
-}
+}*/

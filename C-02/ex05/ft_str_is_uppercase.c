@@ -15,10 +15,10 @@ int ft_str_is_uppercase(char *str)
     return 1;
     
 }
-
+/*
 int main(void)
 {
     char str[] = "HELLOWORLD";
     int ret = ft_str_is_uppercase(str);
     printf("%d \n", ret);
-}
+}*/

@@ -13,10 +13,10 @@ int ft_str_is_printable(char *str)
     }
     return 1;
 }
-
+/*
 int main(void)
 {
     char str[] = "Hello World !";
     int ret = ft_str_is_printable(str);
     printf("%d \n", ret);
-}
+}*/

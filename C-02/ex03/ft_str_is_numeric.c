@@ -14,10 +14,10 @@ int ft_str_is_numeric(char *str)
     }
     return 1;
 }
-
+/*
 int main(void)
 {
     char str[] = "12345";
     int ret = ft_str_is_numeric(str);
     printf("%d \n", ret);
-}
+}*/

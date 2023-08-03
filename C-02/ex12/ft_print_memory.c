@@ -28,7 +28,6 @@ void ft_base16(unsigned long nb, int count)
 
 void ft_print_address(void *addr)
 {
-    int				count;
 	unsigned long	arg2;
 	arg2 = (unsigned long)addr;
     ft_base16(arg2, 0);
@@ -75,7 +74,7 @@ void ft_print_address_main(char chara)
     ft_putchar(' ');
 }
 
-void ft_complete_content(int count, int i)
+void ft_complete_content(int i)
 {
     ft_putchar('0');
     ft_putchar('0');
@@ -111,20 +110,21 @@ void *ft_print_memory(void *addr, unsigned int size)
 
             i++;
         }
-        ft_complete_content(count,i);
+        ft_complete_content(i);
         ft_print_phrase(count, i + 1, test);
         ft_putchar('\n');
+        return(addr);
     }
     else
     {
         ft_putchar('\n');
+        return(addr);
     }
-    
 }
-
+/*
 int main(void)
 {
     char *str =  "Bonjour les aminches\t\n\tc\a est fou\ttout\tce qu on peut faire avec\t\n\tprint_memory\n\n\n\tlol\nlol\n \0";
     ft_print_memory(str,1);
     return 0;
-}
+}*/

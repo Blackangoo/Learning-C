@@ -11,10 +11,10 @@ char* ft_strcpy(char *dest, char *src)
     dest[i] = '\0';
     return dest;
 }
-
+/*
 int	main()
 {
 	char chaine[] = "Hello world";
 	char chaine2[100];
 	printf("%s\n", ft_strcpy(chaine2, chaine));
-}
+}*/

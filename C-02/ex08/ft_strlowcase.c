@@ -13,9 +13,9 @@ char *ft_strlowcase(char *str)
     }
     return str;
 }
-
+/*
 int main(void)
 {
     char str[] = "HELLO WOLRD!";
     printf("%s \n", ft_strlowcase(str));
-}
+}*/

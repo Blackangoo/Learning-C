@@ -15,10 +15,10 @@ int ft_str_is_lowercase(char *str)
     return 1;
     
 }
-
+/*
 int main(void)
 {
     char str[] = "helloworld";
     int ret = ft_str_is_lowercase(str);
     printf("%d \n", ret);
-}
+}*/
