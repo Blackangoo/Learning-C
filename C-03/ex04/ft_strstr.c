@@ -7,6 +7,8 @@ char *ft_strstr(char *str, char *to_find)
     int i_to_find;
 
     i_str = 0;
+    if (to_find[0] == '\0')
+        return(str);
     while (str[i_str])
     {
         i_to_find = 0;
@@ -25,7 +27,7 @@ char *ft_strstr(char *str, char *to_find)
     }
     return(0);
 }
-
+/*
 int main(void)
 {
     char str[] = "bonjour je suis un mot admin test";
@@ -39,4 +41,4 @@ int main(void)
 	printf("%s\n", ft_strstr(str, to_find));
 
     return(0);
-}
+}*/

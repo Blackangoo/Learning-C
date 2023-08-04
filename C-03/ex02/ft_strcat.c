@@ -21,7 +21,7 @@ char *ft_strcat(char *dest, char *src)
     dest[i] = '\0';
     return dest;
 }
-
+/*
 int main(void)
 {
     char dest[50] = "Je suis la destination";
@@ -29,4 +29,4 @@ int main(void)
     printf("%s \n", ft_strcat(dest, src));
 	printf("%s \n", strcat(dest, src));
     return(0);
-}
+}*/

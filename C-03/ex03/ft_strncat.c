@@ -22,7 +22,7 @@ char *ft_strncat(char *dest, char *src, unsigned int nb)
     return(dest);
     
 }
-
+/*
 int main(void)
 {
     char src[50] = "This is source";
@@ -30,4 +30,4 @@ int main(void)
     printf("%s \n", ft_strncat(dest,src,3));
     printf("%s\n", strncat(dest, src, 3));
     return(0);
-}
+}*/
