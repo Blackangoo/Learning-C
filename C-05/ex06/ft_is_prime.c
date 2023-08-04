@@ -13,15 +13,15 @@ int is_prime(int nb, int x)
         return(0);
     else if (x > nb / 2)
         return(1);
-    is_prime(nb, x + 1);
+    return(is_prime(nb, x + 1));
 }
 
 int ft_is_prime(int nb)
 {
-    is_prime(nb, 2);
+    return(is_prime(nb, 2));
 }
-
+/*
 int main(void)
 {
     printf("%d \n", ft_is_prime(1));
-}
+}*/
