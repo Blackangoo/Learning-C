@@ -15,12 +15,11 @@ void ft_putstr(char *str)
         ft_putchar(str[i]);
         i++;
     }
-    ft_putchar('\n');
 }
-
+/*
 int main(void)
 {
     char str[] = "Hello world";
 
     ft_putstr(str);
-}
+}*/

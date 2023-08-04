@@ -42,36 +42,51 @@ int ft_check_base(char *base)
     return(1);
 }
 
+void ft_check_zero(int nbr, char *base)
+{
+    if (nbr == 0)
+    {
+        ft_putchar(base[0]);
+    }
+    
+}
+
+int ft_check_neg(int nbr)
+{
+    if (nbr == -2147483648)
+        nbr = 2147483648;
+    nbr = -nbr;
+    ft_putchar('-');
+    return(nbr);
+}
+
 void ft_putnbr_base(int nbr, char *base)
 {
     int base_size;
     int nb[100];
     int i;
+
+    ft_check_zero(nbr, base);
     i = 0;
     base_size = ft_strlen(base);
     if (ft_check_base(base))
     {
         if (nbr < 0)
-        {
-            nbr = -nbr;
-            ft_putchar('-');
-        }
+            nbr = ft_check_neg(nbr);
         while (nbr)
         {
             nb[i] = nbr % base_size;
             nbr = nbr / base_size;
             i++;
         }
-        while (--i >= 0)
-        {
+        while (i-- >= 0)
             ft_putchar(base[nb[i]]);
-        }
     }
 }
-
+/*
 int main(void)
 {
     char base[] = "0123456789ABCDEF";
     int nbr = 32;
     ft_putnbr_base(nbr, base);
-}
+}*/

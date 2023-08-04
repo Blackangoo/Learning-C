@@ -12,7 +12,7 @@ int ft_strlen(char *str)
     }
     return(i);
 }
-
+/*
 int main(void)
 {
     char str[] = "Bonjour test test";
@@ -20,4 +20,4 @@ int main(void)
     printf("%d \n", ft_strlen(str));
 
     return(0);
-}
+}*/

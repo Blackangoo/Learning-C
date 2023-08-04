@@ -44,11 +44,11 @@ int ft_atoi(char *str)
     }
     return(nb * ft_signe(str));
 }
-
+/*
 int	main()
 {
 	char *str;
 
 	str = "\t \n  ---+--+1234ab567";
 	printf("%d \n", ft_atoi(str));
-}
+}*/
