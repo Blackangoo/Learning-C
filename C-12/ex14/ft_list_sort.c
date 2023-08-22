@@ -18,16 +18,28 @@ void ft_list_sort(t_list **begin_list, int (*cmp)())
     while (found)
     {
         found = 0;
+        current = *begin_list;
         while (current->next)
         {
             if ((*cmp)(current->data, current->next->data) > 0)
             {
-                temp = current;
-                current = current->next;
-                current->next = temp;
+                temp = current->next;
+                current->next = temp->next;
+                temp->next = current;
+                *begin_list = temp;
+                current = temp;
                 found = 1;
             }
+            else
+                current = current->next;
         }
+    }
+}
+
+void print_list(t_list *list) {
+    while (list) {
+        printf("%s\n", (char *)(list->data));  // Cast data to char* assuming it's a string
+        list = list->next;
     }
 }
 
@@ -49,6 +61,9 @@ int main() {
 
     // Appeler la fonction de tri avec ft_strcmp comme fonction de comparaison
     ft_list_sort(&list, ft_strcmp);
+
+    printf("Liste triée :\n");
+        print_list(list);
 
     // Libérer la mémoire des éléments de la liste
     while (list) {
