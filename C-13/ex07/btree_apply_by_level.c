@@ -33,7 +33,7 @@ void btree_apply_to_level(t_btree *root, void (*applyf)(void *item, int current_
     if (root->left)
         btree_apply_to_level(root->left, applyf, level + 1, is_first_element);
     if (root->right)
-        btree_apply_to_level(root->right, applyf, level + 1, is_first_element);
+        btree_apply_to_level(root->right, applyf, level + 1, root->left ? 0 : is_first_element);
 }
 
 void btree_apply_by_level(t_btree *root, void (*applyf)(void *item, int current_level, int is_first_elem))
